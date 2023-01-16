@@ -4,7 +4,7 @@
 
 
 
-import { useAccount, useOwnedCourses } from "@components/hooks/web3";
+import { useAccount, useOwnedCourse, useOwnedCourses } from "@components/hooks/web3";
 import { useWeb3 } from "@components/providers";
 import { Button, Message } from "@components/ui/common";
 import { OwnedCourseCard } from "@components/ui/course";
@@ -15,11 +15,16 @@ import { getAllCourses } from "@content/courses/fetcher";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-export default function Portfolio({courses}) {
+export default function Portfolio({courses, course}) {
   const { account } = useAccount()
   const { requireInstall } = useWeb3()
   const { ownedCourses } = useOwnedCourses(courses, account.data)
+  const { ownedCourse } = useOwnedCourse(course, account.data)
+
   const router = useRouter()
+  const courseState = ownedCourse.data?.state
+
+  const isLocked = !courseState || courseState === "comprado" || courseState === "desativado"
 
   return (
     <>
@@ -54,7 +59,8 @@ export default function Portfolio({courses}) {
           </Message>
         </div>
         }
-        {ownedCourses.data?.map(course =>
+        { isLocked && 
+        ownedCourses.data?.map(course =>
           <PortfolioCard
             course={course}
             badge={course.badge}

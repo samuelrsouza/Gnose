@@ -3,6 +3,7 @@ import Image from "next/image"
 
   
   export default function PortfolioCard({course, badge}) {
+
   
     return (
       <div className="max-w-xs py-4 px-12 bg-white shadow-lg flex-col align-middle justify-center rounded-lg my-10">

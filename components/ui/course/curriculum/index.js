@@ -1,17 +1,8 @@
 
 
-import { Loader } from "@components/ui/common"
 import Link from "next/link"
 
 
-const lectures = [
-    "How to init App",
-    "How to get a help",
-    "Introduction to Solidity",
-    "Programing in C++",
-    "How to write For Loops",
-    "Safe operator",
-]
 
 
 const statusClass = "px-2 inline-flex text-xs leading-5 font-semibold rounded-full"
@@ -73,19 +64,19 @@ export default function Curriculum({locked, courseState, item}){
                                 </Link>
                               }
                               { courseState === "comprado" &&
-                                <Link legacyBehavior href="#">
+                                <div>
                                   <a
                                     className="text-yellow-500 hover:text-yellow-900">
-                                      Processando
+                                      Aguardando Aprovação
                                   </a>
-                                </Link>
+                                </div>
                               }
                             </> :
                             <Link legacyBehavior href="/aprenda">
                               <a
                                 className="text-indigo-600 hover:text-indigo-900">
                                 Iniciar
-                                </a>
+                              </a>
                             </Link>                  
                           }
                       </td>

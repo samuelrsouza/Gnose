@@ -2,10 +2,11 @@
     {
       "id": "1",
       "type": "Programação",
-      "title": "Programação básica em Python ",
+      "title": "Programação básica em Python",
       "description": "Aprenda Python 3.8.5 com Expressões Lambdas, Iteradores, Geradores, Orientação a Objetos e muito mais!",
       "coverImage": "https://res.cloudinary.com/dup5cva3r/image/upload/v1673895341/best-python-ides-1068x601_skbrpb.jpg",
       "badge": "https://res.cloudinary.com/dup5cva3r/image/upload/v1673891495/python_fighmj.png",
+      "link": "https://classroom.google.com/c/NTQxNDE0ODI5MjA0?cjc=rj3ls25",
       "skill": "Aspirante em Python",
       "slug": "programação-em-Python-do-básico-ao-avançado",
       "wsl": [
@@ -81,6 +82,11 @@
         "Como usar o seu aprendizado para criar oportunidades.",
         "Perfil, características, mindset e habilidades de liderança e o caminho para desenvolvê-las"
       ],
-      "createdAt": ""
+      "createdAt": "",
+      "lec":[
+        "Introdução",
+        "Zona de Conforto",
+        "Liderança em projetos"
+      ]
     }
   ]

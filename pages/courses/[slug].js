@@ -29,10 +29,10 @@ export default function Course({course}) {
       <Keypoints 
         points = {course.wsl}/>
       <Curriculum
-      item ={ course.lec}
-      isLoading = {isLoading}
-      locked = {isLocked}
-      courseState = {courseState}
+        item ={ course.lec}
+        isLoading = {isLoading}
+        locked = {isLocked}
+        courseState = {courseState}
       />
       <Modal />
     </>
