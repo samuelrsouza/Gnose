@@ -27,7 +27,7 @@ export default function Portfolio({courses}) {
       <div className="py-4 text-left text-4xl px-2 font-bold">
         Minhas Habilidades
       </div>
-      <section className="grid grid-cols-1">
+      <section className="grid sm:justify-center sm:grid-cols-3">
         { ownedCourses.isEmpty &&
         <div>
           <Message type="danger">
@@ -56,8 +56,8 @@ export default function Portfolio({courses}) {
         }
         {ownedCourses.data?.map(course =>
           <PortfolioCard
-            key={course.id}
             course={course}
+            badge={course.badge}
             >
           </PortfolioCard>
           )}

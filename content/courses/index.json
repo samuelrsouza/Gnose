@@ -1,64 +1,85 @@
 [
     {
       "id": "1",
-      "type": "Next JS",
-      "title": "Next JS & Typescript with Shopify Integration - Full Guide",
-      "description": "Learn modern Next JS(Next 10+). Code everything in Typescript and integrate with Shopify.",
-      "coverImage": "",
-      "skill": "Iniciante em HTML",
-      "slug": "next-js-typescript-with-shopify-integration-full-guide",
+      "type": "Programação",
+      "title": "Programação básica em Python ",
+      "description": "Aprenda Python 3.8.5 com Expressões Lambdas, Iteradores, Geradores, Orientação a Objetos e muito mais!",
+      "coverImage": "https://res.cloudinary.com/dup5cva3r/image/upload/v1673895341/best-python-ides-1068x601_skbrpb.jpg",
+      "badge": "https://res.cloudinary.com/dup5cva3r/image/upload/v1673891495/python_fighmj.png",
+      "skill": "Aspirante em Python",
+      "slug": "programação-em-Python-do-básico-ao-avançado",
       "wsl": [
-        "Build Next JS apps on your own",
-        "Build ecommerce apps with modern technologies",
-        "Use Shopify to your advantage"
+        "Criação de programas sofisticados com a linguagem Python",
+        "Aplicação em inteligência artificial utilizando Python",
+        "Abordagens de ciência de dados utilizando Python"
       ],
-      "createdAt": ""
+      "createdAt": "",
+      "lec":[
+        "Preparando o ambiente",
+        "Variáveis e tipos de Dados",
+        "Estruturas de Repetição",
+        "Funções",
+        "Expressões Lambdas"
+      ]
     },
     {
       "id": "2",
-      "type": "Gatsby JS",
-      "title": "Gatsby JS Developer's Guide - Important Parts & Blog App",
-      "description": "Learn popular Gatsby JS(Gatsby v3) framework. Use React/GraphQL to build your own blog page with JAMStack architecture.",
-      "coverImage": "",
-      "skill": "Desenvolvimento Web",
-      "slug": "gatsby-js-developer-s-guide-important-parts-blog-app",
+      "type": "Idiomas",
+      "title": "Aprenda o básico do Francês",
+      "description": "Aprenda Francês do ZERO.",
+      "coverImage": "https://res.cloudinary.com/dup5cva3r/image/upload/v1673893989/218881_zQybnbTX_yaxaxf.jpg",
+      "badge": "https://res.cloudinary.com/dup5cva3r/image/upload/v1673891495/frances_xzy592.png",
+      "skill": "Francês Iniciante",
+      "slug": "aprenda-o-básico-do-francês",
       "wsl": [
-        "Build Gatsby JS apps on your own",
-        "Build static page apps with modern technologies",
-        "Understand meaning and benefits of JAMStack",
-        "Use GraphQL to your advantage"
+        "Você aprenderá rapidamente o básico da língua francesa",
+        "Você aprenderá a reagir a situações comuns do dia-a-dia e a situações de emergência",
+        "Será privilegiado a prática do que a teoria",
+        "Você aprenderá a ler corretamente, isso te ajudará a se tornar independente no idioma"
       ],
-      "createdAt": ""
+      "createdAt": "",
+      "lec":[
+        "Introdução",
+        "Como ler e pronunciar",
+        "Situações e conversas",
+        "Vocabuçário",
+        "Gramática"
+      ]
     },
     {
       "id": "3",
-      "type": "Unity",
-      "title": "The Complete Unity Guide 3D - Beginner to RPG Game Dev in C#",
-      "description": "Build 3 games & learn Unity practical way! Start with fundamentals and finish with an RPG game. Using Unity 2020 and C#",
-      "coverImage": "",
-      "skill": "Desenvolvimento Web",
-      "slug": "the-complete-unity-guide-3d-beginner-to-rpg-game-dev-in-c",
+      "type": "Programação",
+      "title": "Java Para Iniciantes e Estudantes",
+      "description": "Linguagem de Programação Java e Desenvolvimento de Telas com JavaFX - Aprenda como Desenvolver Seu Primeiro Software",
+      "coverImage": "https://res.cloudinary.com/dup5cva3r/image/upload/v1673896622/1631038470-Ent-JavaProgramming_wpr61x.jpg",
+      "badge": "https://res.cloudinary.com/dup5cva3r/image/upload/v1673895910/2e4c8eb6-83bb-4b85-b02f-4888fea1ec8c_uqlqxb.png",
+      "skill": "Iniciante Java",
+      "slug": "java-para-iniciantes-e-estudantes",
       "wsl": [
-        "The practical approach by creating cool games",
-        "Fundamentals and core concepts of game development",
-        "Create a RPG game with tons of features",
-        "Math explanations behind the code."
+        "Aprenda do ZERO como desenvolver Programas com Java",
+        "Aprenda como Desenvolver Telas Para Softwares com JavaFX",
+        "100% Prático"
       ],
-      "createdAt": ""
+      "createdAt": "",
+      "lec":[
+        "Instalando e Configurando Softwares Necessários",
+        "Estrutura de Decisão IF/ELSE",
+        "Laço de Repetição",
+        "Orientação a Objetos com Java"
+      ]
     },
     {
       "id": "4",
-      "type": "Phaser 3",
-      "title": "Game Development in JS - The Complete Guide (w/ Phaser 3)",
-      "description": "Start building your own games and publish them on Facebook. Learn how to create HTML5 games in Javascript with Phaser 3.",
-      "coverImage": "https://thrangra.sirv.com/PhaserJS.jpeg",
-      "skill": "Desenvolvimento Web",
-      "slug": "phaser-3-the-complete-guide-build-publish-games-in-js",
+      "type": "DESENVOLVIMENTO PESSOAL",
+      "title": "Fundamentos da Liderança",
+      "description": "Aprenda os Fundamentos Chaves Para se Tornar um Líder Inspirador.",
+      "coverImage": "https://res.cloudinary.com/dup5cva3r/image/upload/v1673897954/iStock-1302675848-min_dygtzu.png",
+      "badge": "https://res.cloudinary.com/dup5cva3r/image/upload/v1673898695/863df71e-1b85-4249-86b9-a0086c3c14b4_ngqytn.png",
+      "skill": "Pequeno Líder",
+      "slug": "fundamentos-da-liderança",
       "wsl": [
-        "Developing games by creating the games",
-        "Fundamentals of game development",
-        "Use Javascript to develop games for Facebook",
-        "Publish your own game on Facebook Instant Games"
+        "Como usar o seu aprendizado para criar oportunidades.",
+        "Perfil, características, mindset e habilidades de liderança e o caminho para desenvolvê-las"
       ],
       "createdAt": ""
     }

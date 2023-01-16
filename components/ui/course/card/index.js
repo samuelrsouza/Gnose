@@ -4,14 +4,14 @@ import Link from "next/link"
 export default function Card({course, disabled, Footer}) {
   return (
     <div
-      className="bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+      className="bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl ">
       <div className="flex h-full">
         <div className="flex h-full next-image-wrapper">
           <Image
             className={`object-cover ${disabled && "filter grayscale"}`}
             src={course.coverImage}
             width="250"
-            height="290"
+            height="250"
             alt={course.title}
           />
         </div>

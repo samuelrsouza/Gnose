@@ -1,13 +1,11 @@
 
 
-module.exports = {
-  reactStrictMode: true,
+module.exports = {  
+
   
-  images: {
-    domains: [
-      "thrangra.sirv.com"
-    ]
-  }
+    images: {
+        domains: ["res.cloudinary.com"],
+    },
 }
 
 //module.exports = nextConfig{

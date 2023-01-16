@@ -150,8 +150,8 @@ contract CourseMarketplace {
         isStopped = false;
   }
 
-//[valor do ID do curso] ASCII -> DEC | transforma em 16 bytes
-//[id do curso + msg sender] -> KECCAK -> HEX
+//[ID do curso] ASCII -> DEC | transforma em 16 bytes
+//[id do curso + msg sender] -> KECCAK -> HEX -> hash do curso
 
     function purchaseCourse(bytes16 courseId, bytes32 proof) external payable onlyWhenNotStopped{
         bytes32 courseHash = keccak256(abi.encodePacked(courseId, msg.sender));

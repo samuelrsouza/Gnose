@@ -24,12 +24,12 @@ export default function Course({course}) {
           description={course.description}
           image={course.coverImage}
           skill={course.skill}
-
         />
       </div>
       <Keypoints 
         points = {course.wsl}/>
       <Curriculum
+      item ={ course.lec}
       isLoading = {isLoading}
       locked = {isLocked}
       courseState = {courseState}

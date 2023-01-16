@@ -12,7 +12,7 @@ const LINKS = [{
     value: "Comprar"
   }, {
     href: "/marketplace/courses/possuidos",
-    value: "Meu Registro"
+    value: "Meu Conhecimento"
   }, {
     href: "/marketplace/courses/gerenciar",
     value: "Gerenciar",

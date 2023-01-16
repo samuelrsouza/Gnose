@@ -16,7 +16,7 @@ const lectures = [
 
 const statusClass = "px-2 inline-flex text-xs leading-5 font-semibold rounded-full"
 
-export default function Curriculum({locked, courseState, isLoading}){
+export default function Curriculum({locked, courseState, item}){
     return (
         <section className="max-w-5xl mx-auto">
           <div className="flex flex-col">
@@ -38,13 +38,13 @@ export default function Curriculum({locked, courseState, isLoading}){
                       </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
-                      { lectures.map(lec =>
-                        <tr key={lec}>
+                      { item.map((item) =>
+                        <tr key={item}>
                           <td className="px-6 py-4 whitespace-nowrap">
                             <div className="flex items-center">
                               <div className="ml-4">
                                 <div className="text-md font-medium text-gray-900">
-                                  {lec}
+                                  {item}
                                 </div>
                               </div>
                             </div>
@@ -86,7 +86,7 @@ export default function Curriculum({locked, courseState, isLoading}){
                                 className="text-indigo-600 hover:text-indigo-900">
                                 Iniciar
                                 </a>
-                            </Link>
+                            </Link>                  
                           }
                       </td>
                     </tr>
