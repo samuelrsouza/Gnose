@@ -45,7 +45,7 @@ export default function OrderModal({course, onClose, onSubmit}) {
     setIsOpen(false)
     setOrder(defaultOrder)
     setEnablePrice(false)
-    onClose()
+    onClose(true)
   }
 
   const formState = createFormState(order)
@@ -144,7 +144,7 @@ export default function OrderModal({course, onClose, onSubmit}) {
             </div>
           </div>
         </div>
-        <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex">
+        <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex ">
           <Button
             disabled={formState.isDisabled}
             onClick={() => {
@@ -153,9 +153,10 @@ export default function OrderModal({course, onClose, onSubmit}) {
             Enviar
           </Button>
           <Button
+            className="justify-center py-2 ml-5 "
             onClick={closeModal}
             variant="red">
-            Cancelar
+            Fechar
           </Button>
         </div>
       </div>

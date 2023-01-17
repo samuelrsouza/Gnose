@@ -77,7 +77,7 @@ export default function Curriculum({locked, courseState, item}){
                                 className="text-indigo-600 hover:text-indigo-900">
                                 Iniciar
                               </a>
-                            </Link>                  
+                            </Link>                
                           }
                       </td>
                     </tr>

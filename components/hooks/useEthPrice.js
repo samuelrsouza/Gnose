@@ -11,7 +11,7 @@ import useSWR from "swr"
 
 
 const URL = "https://api.coingecko.com/api/v3/coins/ethereum?localization=false&tickers=false&community_data=false&developer_data=false&sparkline=false"
-export const COURSE_PRICE = 15
+export const COURSE_PRICE = 2
 
 const fetcher = async url => {
   const res = await fetch(url)
@@ -26,7 +26,7 @@ export const useEthPrice = () => {
     { refreshInterval: 1000 }
   )
 
-  const perItem = (data && (COURSE_PRICE / Number(data)).toFixed(6)) ?? null
+  const perItem = (data && (COURSE_PRICE / Number(data)).toFixed(5)) ?? null
 
   return { eth: {data, perItem, ...rest}}
 } 

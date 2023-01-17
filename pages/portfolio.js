@@ -32,7 +32,7 @@ export default function Portfolio({courses, course}) {
       <div className="py-4 text-left text-4xl px-2 font-bold">
         Minhas Habilidades
       </div>
-      <section className="grid sm:justify-center sm:grid-cols-3">
+      <section className="">
         { ownedCourses.isEmpty &&
         <div>
           <Message type="danger">
@@ -59,6 +59,7 @@ export default function Portfolio({courses, course}) {
           </Message>
         </div>
         }
+        <div className="grid sm:justify-center sm:grid-cols-3"> 
         { isLocked && 
         ownedCourses.data?.map(course =>
           <PortfolioCard
@@ -67,7 +68,7 @@ export default function Portfolio({courses, course}) {
             >
           </PortfolioCard>
           )}
-        
+        </div>
       </section>
     </>
   )

@@ -1,23 +1,30 @@
 import { useAccount, useOwnedCourse } from "@components/hooks/web3";
 import { useWeb3 } from "@components/providers";
-import { Modal } from "@components/ui/common";
+import { Button, Modal } from "@components/ui/common";
 import { CourseHero, Curriculum, Keypoints } from "@components/ui/course";
+
 
 import { BaseLayout } from "@components/ui/layout";
 import { getAllCourses } from "@content/courses/fetcher";
 
 export default function Course({course}) {
-  const { isLoading } = useWeb3()
   const { account } = useAccount()
   const { ownedCourse } = useOwnedCourse(course, account.data)
+  const { web3, contract, isLoading } = useWeb3()
   const courseState = ownedCourse.data?.state
 
   const isLocked = !courseState || courseState === "comprado" || courseState === "desativado"
 
+  const withdraw = async () => {
+    const amount = web3.utils.toWei("1", "ether")
+      const pay = await contract.methods.withdraw(amount, {from: account.data})
+      console.log(pay) 
+  }
+
   return (
     <>
       {/* {course.title} */}
-      <div className="py-4">
+      <div className="py-4 ">
       <CourseHero
           hasOwner={!!ownedCourse.data}
           title={course.title}
@@ -35,6 +42,18 @@ export default function Course({course}) {
         courseState = {courseState}
       />
       <Modal />
+      <div className="place-items-center content-center">
+      
+      { !isLocked &&
+      <Button
+        locked = {isLocked}
+        className={"px-3 mt-2 mb-4"}
+        onClick= {withdraw}
+      >
+        Receber Recompensa
+      </ Button>
+      }
+    </div>
     </>
   )
 }

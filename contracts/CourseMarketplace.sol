@@ -3,7 +3,7 @@ pragma solidity >=0.4.22 <0.9.0;
 
 
 //três estados dos cursos/aulas/matérias
-//são representados por números constantes a partir do 0
+//são representados por números a partir do 0
 contract CourseMarketplace {
     enum State {Purchased, Activated, Deactivated}
 
@@ -106,6 +106,7 @@ contract CourseMarketplace {
         course.state = State.Activated;
     }
 
+
     function deactivateCourse(bytes32 courseHash) external onlyWhenNotStopped onlyOwner{
         if (!isCourseCreated(courseHash)) {
             revert CourseIsNotCreated();
@@ -124,7 +125,10 @@ contract CourseMarketplace {
         course.price = 0;
     }
 
-    function withdraw(uint amount) external onlyOwner 
+    function addFunds(uint amount) external payable {
+    }
+
+    function withdraw(uint amount) external payable onlyOwner 
     {
         (bool success, ) = owner.call{value: amount}("");
         require(success, "Transferencia falhou.");
@@ -189,7 +193,7 @@ contract CourseMarketplace {
     }
 
     function setContractOwner(address newOwner) private {
-    owner = payable(newOwner);
+        owner = payable(newOwner);
     }
 
     function isCourseCreated(bytes32 courseHash) private view returns (bool) {

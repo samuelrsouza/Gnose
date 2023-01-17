@@ -8,7 +8,6 @@
 
 
 
-
 import { useAdmin, useManagedCourses } from "@components/hooks/web3";
 import { useWeb3 } from "@components/providers";
 import { Button, Message } from "@components/ui/common";
@@ -16,7 +15,7 @@ import { CourseFilter, ManagedCourseCard } from "@components/ui/course";
 import { BaseLayout } from "@components/ui/layout";
 import { MarketHeader, MarketHeaderNoBar } from "@components/ui/marketplace";
 import { normalizeOwnedCourse } from "@utils/normalize";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 const VerificationInput = ({onVerify}) => {
   const [ email, setEmail ] = useState("")
@@ -43,6 +42,7 @@ const VerificationInput = ({onVerify}) => {
 }
 
 export default function ManagedCourses() {
+  
   const [ proofedOwnership, setProofedOwnership ] = useState({})
   const [ searchedCourse, setSearchedCourse ] = useState(null)
   const [ filters, setFilters ] = useState({state: "todos"})
@@ -100,6 +100,22 @@ export default function ManagedCourses() {
     changeState(courseHash, "deactivateCourse")
   }
 
+  const withdraw = async () => {
+    const amounts = web3.utils.toWei("1", "ether")
+      const pay = await contract.methods.withdraw(amounts)
+      console.log(pay) 
+  }
+
+  const addFund = async () => {
+    const value = web3.utils.toWei("1", "ether")
+
+    await contract.methods.addFunds(value)
+    
+  }
+  //86.0937
+
+
+
   const searchCourse = async hash => {
     const re = /[0-9A-Fa-f]{6}/g;
 
@@ -146,16 +162,28 @@ export default function ManagedCourses() {
           </div>
         }
         { course.state === "comprado" &&
-          <div className="mt-2">
+          <div className="mt-2 place-items-center content-center">
             <Button
               onClick={() => activateCourse(course.hash)}
-              variant="green">
+              variant="green"
+              className="button is-primary ml-13">
               Ativar
             </Button>
             <Button
               onClick={() => deactivateCourse(course.hash)}
-              variant="red">
+              variant="red"
+              className="button is-primary ml-10 mt-6">
               Desativar
+            </Button>
+            <Button
+                onClick={withdraw}
+                className="button is-primary ml-10">
+                  Realizar tranferência
+            </Button>
+            <Button
+                onClick={addFund}
+                className="button is-primary ml-10">
+                  Adicionar fundos na carteira
             </Button>
           </div>
         }

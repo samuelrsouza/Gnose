@@ -38,10 +38,7 @@ export default function Marketplace({courses}) {
     const value = web3.utils.toWei(String(order.price))
 
     try {
-      const result = await contract.methods.purchaseCourse(
-        hexCourseId,
-        proof
-      ).send({from: account.data, value})
+      const result = await contract.methods.purchaseCourse(hexCourseId, proof).send({from: account.data, value})
       console.log(result)
     } catch (error) {
       console.log("Não foi possível efetuar a compra.")
