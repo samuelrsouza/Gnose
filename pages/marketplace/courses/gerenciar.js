@@ -52,25 +52,25 @@ export default function ManagedCourses() {
 
 
   const verifyCourse = (email, {hash, proof}) => {
-    if(!email){
-      return null
+    if (!email) {
+      return
     }
-    const emailHash = web3.utils.sha3(email)
-    //hash do email + hash do curso = comprovante
-    const proofToCheck = web3.utils.soliditySha3(
-      {type: "bytes32", value:emailHash},
-      {type: "bytes32", value:hash} 
-      )
 
-      proofToCheck === proof ?
-        setProofedOwnership({
-          ...proofedOwnership,
-          [hash]: true
-        }) :
+    const emailHash = web3.utils.sha3(email)
+    const proofToCheck = web3.utils.soliditySha3(
+      { type: "bytes32", value: emailHash },
+      { type: "bytes32", value: hash }
+    )
+
+    proofToCheck === proof ?
       setProofedOwnership({
-          ...proofedOwnership,
-          [hash]: false
-        })
+        ...proofedOwnership,
+        [hash]: true
+      }) :
+      setProofedOwnership({
+        ...proofedOwnership,
+        [hash]: false
+      })
   }
 
 
@@ -100,17 +100,10 @@ export default function ManagedCourses() {
     changeState(courseHash, "deactivateCourse")
   }
 
-  const withdraw = async () => {
-    const amounts = web3.utils.toWei("1", "ether")
-      const pay = await contract.methods.withdraw(amounts)
-      console.log(pay) 
-  }
 
   const addFund = async () => {
-    const value = web3.utils.toWei("1", "ether")
-
-    await contract.methods.addFunds(value)
-    
+    const deposit = await contract.methods.addFunds().send({value: web3.utils.toWei("1", "ether"),from: account.data});
+    console.log(deposit) 
   }
   //86.0937
 
@@ -140,6 +133,7 @@ export default function ManagedCourses() {
         course={course}
       >
         <VerificationInput
+          className="mt-5"
           onVerify={email => {
             verifyCourse(email, {
               hash: course.hash,
@@ -175,15 +169,15 @@ export default function ManagedCourses() {
               className="button is-primary ml-10 mt-6">
               Desativar
             </Button>
-            <Button
+            {/* <Button
                 onClick={withdraw}
                 className="button is-primary ml-10">
                   Realizar tranferência
-            </Button>
+            </Button> */}
             <Button
                 onClick={addFund}
                 className="button is-primary ml-10">
-                  Adicionar fundos na carteira
+                  Adicionar fundos no contrato
             </Button>
           </div>
         }

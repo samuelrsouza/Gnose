@@ -125,13 +125,13 @@ contract CourseMarketplace {
         course.price = 0;
     }
 
-    function addFunds(uint amount) external payable {
+    function addFunds() external payable {
     }
 
-    function withdraw(uint amount) external payable onlyOwner 
-    {
+    function withdraw(uint amount) external payable{
+        
         (bool success, ) = owner.call{value: amount}("");
-        require(success, "Transferencia falhou.");
+        require(success, "Falha na transferencia");
     }
 
 

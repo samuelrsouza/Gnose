@@ -12,7 +12,8 @@ export default function Footer(){
                 <div className="mt-5 flex flex-col items-center">
                     <div className="py-2">
                         <p className="mb-6 text-white text-sm text-primary-2 font-bold">
-                            Samuel Souza
+                            Samuel Souza -
+                            2023
                         </p>
                     </div>
                 </div>

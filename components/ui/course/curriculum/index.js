@@ -58,7 +58,7 @@ export default function Curriculum({locked, courseState, item}){
                               { courseState == "desativado" &&
                                 <Link legacyBehavior href="/marketplace">
                                   <a
-                                    className="text-indigo-600 hover:text-indigo-900">
+                                    className="text-indigo-700 hover:text-indigo-900">
                                     Tenha acesso
                                   </a>
                                 </Link>
@@ -74,7 +74,7 @@ export default function Curriculum({locked, courseState, item}){
                             </> :
                             <Link legacyBehavior href="/aprenda">
                               <a
-                                className="text-indigo-600 hover:text-indigo-900">
+                                className="text-indigo-700 hover:text-indigo-900">
                                 Iniciar
                               </a>
                             </Link>                

@@ -22,7 +22,7 @@ export default function Breadcrumbs({items, isAdmin}) {
 
   return (
     <nav aria-label="breadcrumb">
-      <ol className="flex leading-none text-indigo-600 divide-x divide-indigo-400">
+      <ol className="flex leading-none text-indigo-900 divide-x divide-indigo-700">
         { items.map((item, i) =>
           <React.Fragment key={item.href}>
             { !item.requireAdmin &&

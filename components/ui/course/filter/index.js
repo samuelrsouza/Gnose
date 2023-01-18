@@ -25,7 +25,7 @@ export default function CourseFilter({onSearchSubmit, onFilterSelect}) {
           type="text"
           name="courseHash"
           id="courseHash"
-          className="w-52 xs:w-72 sm:w-96 focus:ring-indigo-500 shadow-md focus:border-indigo-500 block pl-7 p-4 sm:text-sm border-gray-300 rounded-md"
+          className="w-52 xs:w-72 sm:w-96 focus:ring-indigo-700 shadow-md focus:border-indigo-900 block pl-7 p-4 sm:text-sm border-gray-300 rounded-md"
           placeholder="0x2341ab..." />
         <Button
           onClick= { () => onSearchSubmit(searchText) }>

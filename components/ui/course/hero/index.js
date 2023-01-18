@@ -38,7 +38,7 @@ export default function Hero({title,description,image, skill, hasOwner, link}){
                         {title.substring(0, title.length)}
                       </span>
                     </h1>
-                    <p className="mt-4 text-xl font-medium  text-indigo-600 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                    <p className="mt-4 text-xl font-medium  text-indigo-900 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                       {description}
                     </p>
                       <div className="mt-4 mb-6 py-5 mr-3 text-xl font-medium text-black-600 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
@@ -52,7 +52,7 @@ export default function Hero({title,description,image, skill, hasOwner, link}){
                     </p> */}
                     <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                       <div className="mt-3 sm:mt-0 sm:ml-3">
-                          <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+                          <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-900 md:py-4 md:text-lg md:px-10">
                             Comece agora
                           </a>
                       </div>

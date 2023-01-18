@@ -46,13 +46,13 @@ export default function Navbar() {
                   account.data ?
                   <Button
                     hoverable={false}
-                    className="cursor-default ">
+                    className="cursor-default bg-indigo-900 ">
                       {account.isAdmin && "Conectado como Professor"}
                       { account.data &&
                         !pathname.includes("/marketplace") &&
                         <div className="flex justify-end pt-1">
                           {account.isAdmin && "Conta: "}
-                          <div className="text-white bg-indigo-600 rounded-md">
+                          <div className="text-white bg-indigo-900 rounded-md">
                             &nbsp;
                             {account.data}
                           </div>

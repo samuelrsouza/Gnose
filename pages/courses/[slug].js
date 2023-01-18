@@ -17,10 +17,11 @@ export default function Course({course}) {
 
   const withdraw = async () => {
     const amount = web3.utils.toWei("1", "ether")
-      const pay = await contract.methods.withdraw(amount, {from: account.data})
+    const pay = await contract.methods.withdraw(amount).send({from: account.data});
       console.log(pay) 
   }
-
+//84.31
+//84.51
   return (
     <>
       {/* {course.title} */}
@@ -42,18 +43,21 @@ export default function Course({course}) {
         courseState = {courseState}
       />
       <Modal />
-      <div className="place-items-center content-center">
       
+      <div className="container mx-auto px-6">
+        <div className="mt-5 flex flex-col items-center">
+          <div className="py-2"></div>
       { !isLocked &&
       <Button
         locked = {isLocked}
-        className={"px-3 mt-2 mb-4"}
+        className={"mt-3 flex items-center mb-4 "}
         onClick= {withdraw}
       >
         Receber Recompensa
       </ Button>
       }
-    </div>
+          </div>
+        </div>
     </>
   )
 }

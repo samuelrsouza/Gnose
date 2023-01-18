@@ -17,7 +17,7 @@ export default function WalletBar() {
   const {account, network} = useWalletInfo()
   
   return (
-    <section className="text-white bg-indigo-600 rounded-lg">
+    <section className="text-white bg-indigo-900 rounded-lg">
       <div className="p-8 py-5">
         <h1 className="text-2xl">Olá, {account.data} </h1>
         <h2 className="subtitle mb-5 xs:text-xl">Comece sua jornada agora!</h2>
