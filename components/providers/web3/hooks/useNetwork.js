@@ -23,7 +23,7 @@ export const handler = (web3) => () => {
         const chainId = await web3.eth.getChainId()
 
         if (!chainId) {
-            throw new Error("Cannot retreive network. Please refresh the browser.")
+            throw new Error("Não foi possível se conectar.")
         }
 
         return NETWORKS[chainId]

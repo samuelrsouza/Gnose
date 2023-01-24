@@ -102,7 +102,7 @@ export default function ManagedCourses() {
 
 
   const addFund = async () => {
-    const deposit = await contract.methods.addFunds().send({value: web3.utils.toWei("1", "ether"),from: account.data});
+    const deposit = await contract.methods.addFunds().send({value: web3.utils.toWei("0.0043217479618327", "ether"),from: account.data});
     console.log(deposit) 
   }
   //86.0937
@@ -177,7 +177,7 @@ export default function ManagedCourses() {
             <Button
                 onClick={addFund}
                 className="button is-primary ml-10">
-                  Adicionar fundos no contrato
+                  Adicionar fundos ao contrato
             </Button>
           </div>
         }
@@ -207,7 +207,7 @@ export default function ManagedCourses() {
             { renderCard(searchedCourse, true) }
           </div>
         }
-        <h1 className="text-2xl font-bold p-5">Todos os Conteúdos</h1>
+        <h1 className="text-2xl font-bold p-5">Todos os Cursos</h1>
         { filterCourses }
         { filterCourses?.length === 0 &&
           <Message type="danger"> 

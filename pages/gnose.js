@@ -10,9 +10,7 @@ export default function GnosePlace() {
                 <h2 className="text-3xl font-bold sm:text-4xl">Entenda como funciona</h2>
 
                 <p className="mt-4 text-2xl text-black-900">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-                    dolores iure fugit totam iste obcaecati. Consequatur ipsa quod ipsum
-                    sequi culpa delectus, cumque id tenetur quibusdam, quos fuga minima.
+                    Antes de começar, verifique se você possui acesso aos módulos disponíveis através de seu professor. 
                 </p>
                 </div>
 
@@ -42,12 +40,10 @@ export default function GnosePlace() {
                     </span>
 
                     <div className="ml-4">
-                    <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
+                    <h2 className="text-lg font-bold">Tenha uma conta no Metamask.</h2>
 
-                    <p className="mt-1 text-sm text-black-300">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-                        cumque tempore est ab possimus quisquam reiciendis tempora animi!
-                        Quaerat, saepe?
+                    <p className="mt-1 text-md text-black-300">
+                        Caso você não tenha instalado, instale o Metamask no seu navegador e conecte-se à sua conta.                 
                     </p>
                     </div>
                 </div>
@@ -75,12 +71,10 @@ export default function GnosePlace() {
                     </span>
 
                     <div className="ml-4">
-                    <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
+                    <h2 className="text-lg font-bold">Conhecimento Retornável.</h2>
 
-                    <p className="mt-1 text-sm text-black-900">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-                        cumque tempore est ab possimus quisquam reiciendis tempora animi!
-                        Quaerat, saepe?
+                    <p className="mt-1 text-md text-black-900">
+                        A cada módulo comprado você receberá uma recompensa no valor relativo à sua compra.
                     </p>
                     </div>
                 </div>
@@ -108,12 +102,10 @@ export default function GnosePlace() {
                     </span>
 
                     <div className="ml-4">
-                    <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
+                    <h2 className="text-lg font-bold">Ganhe Distintivos.</h2>
 
-                    <p className="mt-1 text-sm text-black-900">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-                        cumque tempore est ab possimus quisquam reiciendis tempora animi!
-                        Quaerat, saepe?
+                    <p className="mt-1 text-md text-black-900">
+                        A cada módulo você receberá um distintivo relacionado à habilidade desenvolvida durante seu aprendizado.
                     </p>
                     </div>
                 </div>
@@ -141,12 +133,10 @@ export default function GnosePlace() {
                     </span>
 
                     <div className="ml-4">
-                    <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
+                    <h2 className="text-lg font-bold">Compre mais Módulos.</h2>
 
-                    <p className="mt-1 text-sm text-black-900">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-                        cumque tempore est ab possimus quisquam reiciendis tempora animi!
-                        Quaerat, saepe?
+                    <p className="mt-1 text-md text-black-900">
+                        Adquira mais conhecimento por meio das recompenas.
                     </p>
                     </div>
                 </div>
@@ -174,12 +164,10 @@ export default function GnosePlace() {
                     </span>
 
                     <div className="ml-4">
-                    <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
+                    <h2 className="text-lg font-bold">Trilhe sua Jornada.</h2>
 
-                    <p className="mt-1 text-sm text-black-900">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-                        cumque tempore est ab possimus quisquam reiciendis tempora animi!
-                        Quaerat, saepe?
+                    <p className="mt-1 text-md text-black-900">
+                        Através dos distintivos, acompanhe seu percurso para definir seu foco nas aprendizagens.
                     </p>
                     </div>
                 </div>

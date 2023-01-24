@@ -6,15 +6,13 @@
       "description": "Aprenda Python 3.8.5 com Expressões Lambdas, Iteradores, Geradores, Orientação a Objetos e muito mais!",
       "coverImage": "https://res.cloudinary.com/dup5cva3r/image/upload/v1673895341/best-python-ides-1068x601_skbrpb.jpg",
       "badge": "https://res.cloudinary.com/dup5cva3r/image/upload/v1673891495/python_fighmj.png",
-      "link": "https://classroom.google.com/c/NTQxNDE0ODI5MjA0?cjc=rj3ls25",
       "skill": "Aspirante em Python",
-      "slug": "programação-em-Python-do-básico-ao-avançado",
+      "slug": "programação-em-python-do-básico-ao-avançado",
       "wsl": [
         "Criação de programas sofisticados com a linguagem Python",
         "Aplicação em inteligência artificial utilizando Python",
         "Abordagens de ciência de dados utilizando Python"
       ],
-      "createdAt": "",
       "lec":[
         "Preparando o ambiente",
         "Variáveis e tipos de Dados",
@@ -31,7 +29,7 @@
       "coverImage": "https://res.cloudinary.com/dup5cva3r/image/upload/v1673893989/218881_zQybnbTX_yaxaxf.jpg",
       "badge": "https://res.cloudinary.com/dup5cva3r/image/upload/v1673891495/frances_xzy592.png",
       "skill": "Francês Iniciante",
-      "slug": "aprenda-o-básico-do-francês",
+      "slug": "aprenda-o-basico-do-frances",
       "wsl": [
         "Você aprenderá rapidamente o básico da língua francesa",
         "Você aprenderá a reagir a situações comuns do dia-a-dia e a situações de emergência",
@@ -61,7 +59,6 @@
         "Aprenda como Desenvolver Telas Para Softwares com JavaFX",
         "100% Prático"
       ],
-      "createdAt": "",
       "lec":[
         "Instalando e Configurando Softwares Necessários",
         "Estrutura de Decisão IF/ELSE",
@@ -77,12 +74,11 @@
       "coverImage": "https://res.cloudinary.com/dup5cva3r/image/upload/v1673897954/iStock-1302675848-min_dygtzu.png",
       "badge": "https://res.cloudinary.com/dup5cva3r/image/upload/v1673898695/863df71e-1b85-4249-86b9-a0086c3c14b4_ngqytn.png",
       "skill": "Pequeno Líder",
-      "slug": "fundamentos-da-liderança",
+      "slug": "fundamentos-da-lideranca",
       "wsl": [
         "Como usar o seu aprendizado para criar oportunidades.",
         "Perfil, características, mindset e habilidades de liderança e o caminho para desenvolvê-las"
       ],
-      "createdAt": "",
       "lec":[
         "Introdução",
         "Zona de Conforto",

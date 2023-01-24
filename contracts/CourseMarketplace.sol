@@ -17,11 +17,13 @@ contract CourseMarketplace {
 
     bool public isStopped = false;
      
-    //mapping do courseHash para os dados do Course
-    mapping(bytes32 => Course) private ownedCourses;
 
     //mapping do courseId para o courseHash
     mapping(uint => bytes32) private ownedCourseHash;
+
+    //mapping do courseHash para os dados do Course
+    mapping(bytes32 => Course) private ownedCourses;
+
 
     //número de todos os cursos + id dos cursos
     uint private totalOwnedCourses;
@@ -69,29 +71,28 @@ contract CourseMarketplace {
 
     receive() external payable {}
 
-    function repurchaseCourse(bytes32 courseHash) external payable onlyWhenNotStopped{
-        if (!isCourseCreated(courseHash)) {
-            revert CourseIsNotCreated();
-        }
+    // function repurchaseCourse(bytes32 courseHash) external payable onlyWhenNotStopped{
+    //     if (!isCourseCreated(courseHash)) {
+    //         revert CourseIsNotCreated();
+    //     }
 
-        if(!hasCourseOwnership(courseHash)) {
-            revert SenderIsNotCourseOwner();
-        }
+    //     if(!hasCourseOwnership(courseHash)) {
+    //         revert SenderIsNotCourseOwner();
+    //     }
 
-    Course storage course = ownedCourses[courseHash];
+    // Course storage course = ownedCourses[courseHash];
 
-        if (course.state != State.Deactivated) {
-        revert InvalidState();
-        }
+    //     if (course.state != State.Deactivated) {
+    //     revert InvalidState();
+    //     }
 
-        course.state = State.Purchased;
-        course.price = msg.value;
-    }
+    //     course.state = State.Purchased;
+    //     course.price = msg.value;
+    // }
 
 
-
-    function activateCourse(bytes32 courseHash) external onlyOwner onlyWhenNotStopped{
-        //recebe o hash do curso do front
+    function activateCourse(bytes32 courseHash) external onlyWhenNotStopped{
+        //recebe o hash do curso
         //tal request foi enviado pelo dono da transação
         //se o curso não for criado, irá reverter o contrato
         if(!isCourseCreated(courseHash)){
@@ -107,7 +108,7 @@ contract CourseMarketplace {
     }
 
 
-    function deactivateCourse(bytes32 courseHash) external onlyWhenNotStopped onlyOwner{
+    function deactivateCourse(bytes32 courseHash) external onlyWhenNotStopped{
         if (!isCourseCreated(courseHash)) {
             revert CourseIsNotCreated();
         }
@@ -128,12 +129,15 @@ contract CourseMarketplace {
     function addFunds() external payable {
     }
 
-    function withdraw(uint amount) external payable{
+    // function withdraw(uint amount) external payable{
         
-        (bool success, ) = owner.call{value: amount}("");
-        require(success, "Falha na transferencia");
-    }
+    //     (bool success, ) = owner.call{value: amount}("");
+    //     require(success, "Falha na transferencia");
+    // }
 
+    function withdraw(uint withdrawAmount) payable external {
+        payable(msg.sender).transfer(withdrawAmount);
+  }
 
     //saca o valor total do contrato para o dono do contrato em caso de falhas ou erros
     function emergencyWithdraw() external onlyWhenStopped onlyOwner{
@@ -152,7 +156,7 @@ contract CourseMarketplace {
 
   function resumeContract() external onlyOwner {
         isStopped = false;
-  }
+    }
 
 //[ID do curso] ASCII -> DEC | transforma em 16 bytes
 //[id do curso + msg sender] -> KECCAK -> HEX -> hash do curso
@@ -176,19 +180,19 @@ contract CourseMarketplace {
         setContractOwner(newOwner);
     }
 
-    function getCourseCount() external view returns (uint) {
+    function getCourseCount() external view returns(uint) {
         return totalOwnedCourses;
     }
 
-    function getCourseHashAtIndex(uint index) external view returns (bytes32) {
+    function getCourseHashAtIndex(uint index) external view returns(bytes32) {
         return ownedCourseHash[index];
     }
 
-    function getCourseByHash(bytes32 courseHash) external view returns (Course memory) {
+    function getCourseByHash(bytes32 courseHash) external view returns(Course memory) {
         return ownedCourses[courseHash];
     }
 
-    function getContractOwner() public view returns (address) {
+    function getContractOwner() public view returns(address) {
         return owner;
     }
 
@@ -196,11 +200,11 @@ contract CourseMarketplace {
         owner = payable(newOwner);
     }
 
-    function isCourseCreated(bytes32 courseHash) private view returns (bool) {
+    function isCourseCreated(bytes32 courseHash) private view returns(bool) {
         return ownedCourses[courseHash].owner != 0x0000000000000000000000000000000000000000;
     }
 
-    function hasCourseOwnership(bytes32 courseHash) private view returns (bool) {
+    function hasCourseOwnership(bytes32 courseHash) private view returns(bool) {
         return ownedCourses[courseHash].owner == msg.sender;
     }
-}
+}  

@@ -27,12 +27,13 @@ const Item = ({title, value, className}) => {
       <div className="bg-white border shadow overflow-hidden sm:rounded-lg mb-3">
         <div className="border-t border-gray-200 py-2">
             <Item
-                className="bg-gray-50"
+                className="bg-gray-100"
                 title="ID da Compra"
                 value={course.ownedCourseId}
             />
             <Item
-                title="Hash do curso"
+                className="bg-gray-100"
+                title="Hash da Compra"
                 value={course.hash}
             />
             <Item
@@ -40,7 +41,7 @@ const Item = ({title, value, className}) => {
                 value={course.proof}
             />
             <Item
-                className="bg-gray-50"
+                className="bg-gray-100"
                 title="Dono"
                 value={course.owned}
             />
@@ -49,7 +50,7 @@ const Item = ({title, value, className}) => {
                 value={course.price}
             />
             <Item
-                className="bg-gray-50"
+                className="bg-gray-100"
                 title="Status"
                 value={course.state}
             />
