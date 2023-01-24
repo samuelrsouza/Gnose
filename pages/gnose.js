@@ -195,12 +195,10 @@ export default function GnosePlace() {
                     </span>
 
                     <div className="ml-4">
-                    <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
+                    <h2 className="text-lg font-bold">Forneça seu endereço de email ao professor.</h2>
 
-                    <p className="mt-1 text-sm text-black-900">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-                        cumque tempore est ab possimus quisquam reiciendis tempora animi!
-                        Quaerat, saepe?
+                    <p className="mt-1 text-md text-black-900">
+                        Para que o módulo seja verificado, é necessário que seu tutor tenha conhecimento do e-mail utilizado na compra.
                     </p>
                     </div>
                 </div>
