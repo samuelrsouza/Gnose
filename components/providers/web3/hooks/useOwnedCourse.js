@@ -22,8 +22,8 @@ export const handler = (web3, contract) => (course, account) => {
 
       
     //verifica se o usuário possui o mesmo hash de curso do contrato
-    //caso dê match, será possível pegar quais cursos o usuário possui
-    //ou seja, verifica se o usuário é o dono do curso 
+    //caso dê "match", será possível pegar quais cursos o usuário possui
+    //basicamente verifica se o usuário é o dono do curso igualmente à função do contrato
       if (ownedCourse.owner === "0x0000000000000000000000000000000000000000") {
         return null
       }

@@ -4,7 +4,7 @@ pragma solidity >=0.4.22 <0.9.0;
 
 //três estados dos cursos/aulas/matérias
 //são representados por números a partir do 0
-contract CourseMarketplace {
+contract Gnose {
     enum State {Purchased, Activated, Deactivated}
 
     struct Course{

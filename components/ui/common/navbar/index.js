@@ -13,25 +13,25 @@ export default function Navbar() {
     <section>
       <div className="relative pt-6 px-4 text-lg py-10 sm:px-6 lg:px-8">
         <nav className="relative" aria-label="Global">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between divide-x items-center">
             <div>
               <ActiveLink href="/">
-                <span className="font-medium mr-8 text-gray-500 hover:text-gray-900"> 
+                <span className="font-medium mr-8 text-gray-500 divide-indigo-900 hover:text-gray-900"> 
                   Início 
                 </span> 
               </ActiveLink>
               <ActiveLink href="/marketplace">
-                <span className="font-medium mr-8 text-gray-500 hover:text-gray-900"> 
+                <span className="font-medium mr-8 text-gray-500 divide-indigo-900 hover:text-gray-900"> 
                   Conteúdos 
                 </span>
               </ActiveLink>
               <ActiveLink href="/portfolio">
-                <span className="font-medium mr-8 text-gray-500 hover:text-gray-900"> 
+                <span className="font-medium mr-8 text-gray-500 divide-indigo-900 hover:text-gray-900"> 
                   Portfolio 
                 </span>
               </ActiveLink>
               <ActiveLink href="/gnose">
-                <span className="font-medium mr-8 text-gray-500 hover:text-gray-900"> 
+                <span className="font-medium mr-8 text-gray-500  divide-indigo-900 hover:text-gray-900"> 
                   Gnose 
                 </span>
               </ActiveLink>

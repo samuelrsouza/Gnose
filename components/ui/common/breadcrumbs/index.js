@@ -9,7 +9,7 @@ const BreadcrumbItem = ({item, index}) => {
   return(
     <li
       className={`${index == 0 ? "pr-4" : "px-4"} font-medium text-gray-500 hover:text-gray-900`}>
-      <ActiveLink legacyBehavior href={item.href} activeLinkClass= "text-indigo-500">
+      <ActiveLink legacyBehavior href={item.href} activeLinkClass= "text-indigo-900">
         <a className="text-lg">
           {item.value}
         </a>
@@ -22,6 +22,7 @@ export default function Breadcrumbs({items, isAdmin}) {
 
   return (
     <nav aria-label="breadcrumb">
+      
       <ol className="flex leading-none text-indigo-900 divide-x divide-indigo-900">
         { items.map((item, i) =>
           <React.Fragment key={item.href}>

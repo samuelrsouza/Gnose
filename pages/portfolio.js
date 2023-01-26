@@ -24,11 +24,10 @@ export default function Portfolio({courses, course}) {
   const router = useRouter()
   const courseState = ownedCourse.data?.state
 
-  const isLocked = !courseState || courseState === "comprado" || courseState === "desativado"
+  const isntLocked = courseState === "ativo"
 
   return (
     <>
-      {/* { JSON.stringify(ownedCourses.data) } */}
       <div className="py-4 text-left text-4xl px-2 font-bold">
         Minhas Habilidades
       </div>
@@ -45,25 +44,11 @@ export default function Portfolio({courses, course}) {
           </Message>
         </div>
         }
-        { account.isEmpty &&
-        <div>
-          <Message type="danger">
-            <div>Conecte-se ao Metamask</div>
-          </Message>
-        </div>
-        }
-        { requireInstall &&
-        <div>
-          <Message type="danger">
-            <div>Instale o Metamask</div>
-          </Message>
-        </div>
-        }
         <div className="grid sm:justify-center sm:grid-cols-3"> 
-        { !isLocked &&
+        { !isntLocked &&
           ownedCourses.data?.map(course =>
           <PortfolioCard
-            locked = {isLocked}
+            locked = {isntLocked}
             course={course}
             badge={course.badge}
             >

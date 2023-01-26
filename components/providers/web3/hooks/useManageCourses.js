@@ -30,11 +30,8 @@ export const handler = (web3, contract) => (account) => {
                 courses.push(normalized)
             }
         }
-
         return courses
     }  
   )
-    
-
   return swrRes
 }

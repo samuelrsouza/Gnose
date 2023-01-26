@@ -1,4 +1,4 @@
-import {  createContext, useContext, useEffect, useState, useMemo, children } from "react";
+import {  createContext, useContext, useEffect, useState, useMemo } from "react";
 
 import detectEthereumProvider from "@metamask/detect-provider";
 import { loadContract } from "@utils/loadContract";
@@ -8,7 +8,7 @@ import { setupHooks } from "./hooks/setupHooks";
 const Web3Context = createContext(null)
 
 const setListeners = provider =>{
-  provider.on("chainChanged", _ => window.location.reload())
+  provider.on("mudancaRede", _ => window.location.reload())
 }
 
 const createWeb3State = ({web3, provider, contract, isLoading}) => {
@@ -37,7 +37,7 @@ export default function Web3Provider({children}) {
       const provider = await detectEthereumProvider()
       if (provider) {
         const web3 = new Web3(provider)
-        const contract = await loadContract("CourseMarketplace", web3)
+        const contract = await loadContract("Gnose", web3)
 
 
         setListeners(provider)
