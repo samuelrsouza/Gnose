@@ -41,10 +41,6 @@ const Item = ({title, value, className}) => {
                 value={course.owned}
             />
             <Item
-                title="Preço"
-                value={course.price}
-            />
-            <Item
                 className="bg-gray-100"
                 title="Status"
                 value={course.state}

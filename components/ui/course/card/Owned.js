@@ -24,9 +24,6 @@ export default function OwnedCourseCard({children, course}) {
               <span className="font-bold"> Habilidade:&nbsp; {course.skill} </span>
             </dt>
         </h4>
-        <p className="mt-1 max-w-2xl text-sm text-gray-500">
-          Preço: &nbsp; {course.price}
-        </p>
       </div>
 
       <div className="border-t border-gray-200">
