@@ -60,15 +60,17 @@ export default function ManagedCourses() {
         course={course}
       >
         { course.state === "comprado" &&
-          <div className="mt-2 place-items-center content-center">
+        <div className="grid sm:justify-center">
+          {/* <div className="mt-2"> */}
             <Button
               onClick={() => activateCourse(course.hash)}
               variant="green"
-              className="button is-primary ml-13">
+              className="button is-primary mb-4">
               Ativar
             </Button>
 
-            <div className="flex mt-3 items-stretch mb-4 relative rounded-md">
+          
+            <div className="items-start mt-3 mb-4 grid sm:justify-center relative rounded-md">
               <div className="w-full max-w-xs">
                 <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                   <div className="mb-4">
@@ -81,7 +83,7 @@ export default function ManagedCourses() {
                     <label className="block text-gray-500 text-sm font-bold mb-2">
                       Habilidade do Módulo
                     </label>
-                    <input className="shadow appearance-none border border-black-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="skill" type="skill"/>
+                    <input className="shadow appearance-none border border-black-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="skill" type="skill" placeholder="Verifique a Habilidade"/>
                   </div>
                   <div className="flex items-center justify-between">
                     <Button
@@ -96,10 +98,11 @@ export default function ManagedCourses() {
             </div>
             <Button
                 onClick={addFund}
-                className="button is-primary ml-10">
+                className="button is-primary">
                   Adicionar fundos ao contrato
             </Button>
           </div>
+        // </div>
         }
       </ManagedCourseCard>
     )
