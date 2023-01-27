@@ -16,10 +16,11 @@ export default function Course({course}) {
   const isLocked = !courseState || courseState === "comprado" || courseState === "desativado"
 
   const withdraw = async () => {
-    const withdrawAmount = web3.utils.toWei("0,0043217479618327")
-    const pay = await contract.methods.withdraw(withdrawAmount).send({from: account.data});
-      console.log(pay) 
+    const withdrawAmount = web3.utils.toWei("0,0044217479618327")
+    const recieve = await contract.methods.withdraw(withdrawAmount).send({from: account.data});
+      console.log(recieve) 
   }
+
 //84.31
 //84.51
   return (

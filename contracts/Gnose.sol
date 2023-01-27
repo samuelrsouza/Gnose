@@ -29,6 +29,15 @@ contract Gnose {
         );
     }
 
+    function getIndex(address walletAddress) view public returns(uint) {
+        for(uint i = 0; i < student.length; i++) {
+            if (student[i].walletAddress == walletAddress) {
+                return i;
+            }
+        }
+        return 999;
+    }
+
 
     function balanceOf() public view returns(uint) {
         return address(this).balance;
