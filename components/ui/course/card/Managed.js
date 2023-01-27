@@ -32,13 +32,8 @@ const Item = ({title, value, className}) => {
                 value={course.ownedCourseId}
             />
             <Item
-                className="bg-gray-100"
                 title="Hash da Compra"
                 value={course.hash}
-            />
-            <Item
-                title="Confirmação"
-                value={course.proof}
             />
             <Item
                 className="bg-gray-100"

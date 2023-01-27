@@ -5,15 +5,35 @@ pragma solidity >=0.4.22 <0.9.0;
 //três estados dos cursos/aulas/matérias
 //são representados por números a partir do 0
 contract Gnose {
-    enum State {Purchased, Activated, Deactivated}
+    enum State {Purchased, Activated}
 
     struct Course{
         uint id; //32
         uint price; //32
-        bytes32 proof; //32
         address owner; //20
         State state; //1
     }
+
+
+    struct Student {
+        address payable walletAddress;
+        string skill;
+    }
+
+    Student[] public student;
+
+    function addSkill(address payable walletAddress, string memory skill) public onlyOwner {
+        student.push(Student(
+            walletAddress,
+            skill)
+        );
+    }
+
+
+    function balanceOf() public view returns(uint) {
+        return address(this).balance;
+    }
+
 
     bool public isStopped = false;
      
@@ -107,25 +127,6 @@ contract Gnose {
         course.state = State.Activated;
     }
 
-
-    function deactivateCourse(bytes32 courseHash) external onlyWhenNotStopped{
-        if (!isCourseCreated(courseHash)) {
-            revert CourseIsNotCreated();
-        }
-
-        Course storage course = ownedCourses[courseHash];
-
-        if (course.state != State.Purchased) {
-            revert InvalidState();
-        }
-
-        (bool success, ) = course.owner.call{value: course.price}("");
-            require(success, "A transferencia falhou!");
-
-        course.state = State.Deactivated;
-        course.price = 0;
-    }
-
     function addFunds() external payable {
     }
 
@@ -161,7 +162,7 @@ contract Gnose {
 //[ID do curso] ASCII -> DEC | transforma em 16 bytes
 //[id do curso + msg sender] -> KECCAK -> HEX -> hash do curso
 
-    function purchaseCourse(bytes16 courseId, bytes32 proof) external payable onlyWhenNotStopped{
+    function purchaseCourse(bytes16 courseId) external payable onlyWhenNotStopped{
         bytes32 courseHash = keccak256(abi.encodePacked(courseId, msg.sender));
 
         if(hasCourseOwnership(courseHash)){
@@ -171,7 +172,7 @@ contract Gnose {
         uint id = totalOwnedCourses++;
         ownedCourseHash[id] = courseHash;
         ownedCourses[courseHash] = Course({
-            id: id, price: msg.value, proof: proof, owner: msg.sender, state: State.Purchased
+            id: id, price: msg.value, owner: msg.sender, state: State.Purchased
         });
     }
 

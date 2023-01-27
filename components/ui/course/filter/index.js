@@ -18,7 +18,7 @@ export default function CourseFilter({onSearchSubmit, onFilterSelect}) {
 
   return (
     <div className="flex flex-col md:flex-row items-center my-4">
-      <div className="flex mr-2 relative rounded-md">
+      {/* <div className="flex mr-2 relative rounded-md">
         <input
           onChange={({target: {value}}) => setSearchTest(value)}
           value={searchText}
@@ -31,8 +31,8 @@ export default function CourseFilter({onSearchSubmit, onFilterSelect}) {
           onClick= { () => onSearchSubmit(searchText) }>
           Buscar
         </Button>
-      </div>
-      <div className="relative text-gray-700">
+      </div> */}
+      <div className="relative text-gray-700 justify-center align-middle">
         <select 
           onChange={({target: {value}}) => onFilterSelect(value)}
           className="w-72 h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" placeholder="Regular input">

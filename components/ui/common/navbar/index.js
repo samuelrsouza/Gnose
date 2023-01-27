@@ -30,11 +30,11 @@ export default function Navbar() {
                   Portfolio 
                 </span>
               </ActiveLink>
-              <ActiveLink href="/gnose">
+              {/* <ActiveLink href="/gnose">
                 <span className="font-medium mr-8 text-gray-500  divide-indigo-900 hover:text-gray-900"> 
                   Gnose 
                 </span>
-              </ActiveLink>
+              </ActiveLink> */}
             </div>
             <div>
                 { isLoading ?
