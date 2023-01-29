@@ -68,8 +68,7 @@ export default function ManagedCourses() {
               className="button is-primary mb-4">
               Ativar
             </Button>
-
-          
+            
             <div className="items-start mt-3 mb-4 grid sm:justify-center relative rounded-md">
               <div className="w-full max-w-xs">
                 <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">

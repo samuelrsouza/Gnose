@@ -75,7 +75,7 @@ export default function Curriculum({locked, courseState, item}){
                             <Link legacyBehavior href="/aprenda">
                               <a
                                 className="text-indigo-700 hover:text-indigo-900">
-                                Iniciar
+                                Acessar
                               </a>
                             </Link>                
                           }

@@ -43,7 +43,7 @@ export default function Marketplace({courses}) {
   return (
     <>
       <div className="py-4">
-        <MarketHeader />
+      <MarketHeader />
       </div>
       <CourseList
         courses={courses}

@@ -138,106 +138,6 @@ contract("CourseMarketplace", accounts => {
         })
     })
 
-    describe("Desativação do curso", () => {
-        let courseHash2 = null
-        let currentOwner = null
-
-        before(async () => {
-            await _contract.purchaseCourse(courseId2, proof2, {from: buyer, value})
-            courseHash2 = await _contract.getCourseHashAtIndex(1)
-            currentOwner = await _contract.getContractOwner() 
-        })
-
-        it("não poderá desativar o curso se não for o dono", async() => {
-            await catchRevert(_contract.deactivateCourse(courseHash2, {from:buyer}))
-        })
-
-        it("deverá ter o status de desativado e seu preço deve ser = 0", async() => {
-            const beforeTxBuyerBalance = await getBalance(buyer)
-            const beforeTxContractBalance = await getBalance(_contract.address)
-            const beforeTxOwnerBalance = await getBalance(currentOwner)
-
-            const result = await _contract.deactivateCourse(courseHash2, {from: contractOwner})
-
-            const afterTxBuyerBalance = await getBalance(buyer)
-            const afterTxContractBalance = await getBalance(_contract.address)
-            const afterTxOwnerBalance = await getBalance(currentOwner)
-
-            const course = await _contract.getCourseByHash(courseHash2)
-            const exptectedState = 2
-            const exptectedPrice = 0
-            const gas = await getGas(result)
-
-            assert.equal(course.state, exptectedState, "o curso não foi desativado")
-            assert.equal(course.price, exptectedPrice, "o preço do curso não foi anulado")
-
-            assert.equal(
-                toBN(beforeTxOwnerBalance).sub(gas).toString(), afterTxOwnerBalance, 
-                "O saldo do dono está incorreto")
-        
-            assert.equal(toBN(beforeTxBuyerBalance).add(toBN(value)).toString(), afterTxBuyerBalance, 
-                "O saldo do comprador está incorreto")
-        
-            assert.equal( toBN(beforeTxContractBalance).sub(toBN(value)).toString(), afterTxContractBalance, 
-                "O saldo do contrato está incorreto"
-            )
-        })
-
-        it("não poderá ativar o curso desativado", async() => {
-            await catchRevert(_contract.activateCourse(courseHash2, {from: contractOwner}))
-        })
-    })
-
-    describe("Recomprar o curso", () => {
-
-        let courseHash2 = null
-    
-        before(async () => {
-            courseHash2 = await _contract.getCourseHashAtIndex(1)
-        })
-    
-        it("não deverá comprar um curso inexistente", async () => {
-            const notExistingHash = "0x5ceb3f8075c3dbb5d490c8d1e6c950302ed065e1a9031750ad2c6513069e3fc3"
-            await catchRevert(_contract.repurchaseCourse(notExistingHash, {from: buyer}))
-        })
-    
-        it("não é possível recomprar um curso sem ser o dono", async () => {
-            const notOwnerAddress = accounts[2]
-            await catchRevert(_contract.repurchaseCourse(courseHash2, {from: notOwnerAddress}))
-        })
-    
-        it("poderá recomprar com o dono/comprador original", async () => {
-            const beforeTxBuyerBalance = await getBalance(buyer)
-            const beforeTxContractBalance = await getBalance(_contract.address)
-
-            const result = await _contract.repurchaseCourse(courseHash2, {from: buyer, value})
-
-            const afterTxBuyerBalance = await getBalance(buyer)
-            const afterTxContractBalance = await getBalance(_contract.address)
-
-            const course = await _contract.getCourseByHash(courseHash2)
-            const exptectedState = 0
-            const gas = await getGas(result)
-        
-            assert.equal(course.state, exptectedState, "o curso não possui o status de 'comprado'")
-            assert.equal(course.price, value, `o preço do curso não é = ${value}`)
-
-            //nesse caso, será utilizado a estrutura de números grandes - BIG NUMBERS
-
-            //saldo anterior - (taxas necessárias + valor do curso) == saldo posterior
-            assert.equal(toBN(beforeTxBuyerBalance).sub(toBN(value)).sub(gas).toString(), afterTxBuyerBalance,
-                "O saldo do usuário está incorreto!")
-
-            assert.equal(toBN(beforeTxContractBalance).add(toBN(value)).toString(), afterTxContractBalance,
-                "O saldo do contrato está incorreto!")
-        })
-    
-        it("não é possível recomprar o curso já comprado", async () => {
-            await catchRevert(_contract.repurchaseCourse(courseHash2, {from: buyer}))
-        })
-    })
-
-
     describe("Recebimento de valores", () =>{
      
         it("deverá receber o dinheiro transferido", async () =>{
@@ -254,7 +154,7 @@ contract("CourseMarketplace", accounts => {
         })
     })
 
-    describe("Depósito normal", () => {
+    describe("Adicionar Fundos", () => {
         const fundsToDeposit = "100000000000000000"
         const overLimitFunds = "999999000000000000000"
     

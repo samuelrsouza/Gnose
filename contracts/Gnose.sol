@@ -2,7 +2,7 @@
 pragma solidity >=0.4.22 <0.9.0;
 
 
-//três estados dos cursos/aulas/matérias
+//dois estados dos cursos/aulas
 //são representados por números a partir do 0
 contract Gnose {
     enum State {Purchased, Activated}
@@ -14,7 +14,6 @@ contract Gnose {
         State state; //1
     }
 
-
     struct Student {
         address payable walletAddress;
         string skill;
@@ -23,10 +22,7 @@ contract Gnose {
     Student[] public student;
 
     function addSkill(address payable walletAddress, string memory skill) public onlyOwner {
-        student.push(Student(
-            walletAddress,
-            skill)
-        );
+        student.push(Student(walletAddress, skill));
     }
 
     function getIndex(address walletAddress) view public returns(uint) {
@@ -45,7 +41,6 @@ contract Gnose {
 
 
     bool public isStopped = false;
-     
 
     //mapping do courseId para o courseHash
     mapping(uint => bytes32) private ownedCourseHash;
@@ -53,11 +48,10 @@ contract Gnose {
     //mapping do courseHash para os dados do Course
     mapping(bytes32 => Course) private ownedCourses;
 
-
     //número de todos os cursos + id dos cursos
     uint private totalOwnedCourses;
 
-    //professores - instrutores
+    //dono do contrato
     address payable private owner; 
 
     constructor(){
@@ -80,7 +74,6 @@ contract Gnose {
     error OnlyOwner();
 
 
-    //apenas o dono do contrato pode alterar o acesso de outro dono do curso
     modifier onlyOwner() {
         if (msg.sender != getContractOwner()) {
         revert OnlyOwner();
@@ -100,29 +93,8 @@ contract Gnose {
 
     receive() external payable {}
 
-    // function repurchaseCourse(bytes32 courseHash) external payable onlyWhenNotStopped{
-    //     if (!isCourseCreated(courseHash)) {
-    //         revert CourseIsNotCreated();
-    //     }
-
-    //     if(!hasCourseOwnership(courseHash)) {
-    //         revert SenderIsNotCourseOwner();
-    //     }
-
-    // Course storage course = ownedCourses[courseHash];
-
-    //     if (course.state != State.Deactivated) {
-    //     revert InvalidState();
-    //     }
-
-    //     course.state = State.Purchased;
-    //     course.price = msg.value;
-    // }
-
-
     function activateCourse(bytes32 courseHash) external onlyWhenNotStopped{
         //recebe o hash do curso
-        //tal request foi enviado pelo dono da transação
         //se o curso não for criado, irá reverter o contrato
         if(!isCourseCreated(courseHash)){
             revert CourseIsNotCreated();
@@ -139,21 +111,9 @@ contract Gnose {
     function addFunds() external payable {
     }
 
-    // function withdraw(uint amount) external payable{
-        
-    //     (bool success, ) = owner.call{value: amount}("");
-    //     require(success, "Falha na transferencia");
-    // }
-
     function withdraw(uint withdrawAmount) payable external {
         payable(msg.sender).transfer(withdrawAmount);
   }
-
-    //saca o valor total do contrato para o dono do contrato em caso de falhas ou erros
-    function emergencyWithdraw() external onlyWhenStopped onlyOwner{
-        (bool success, ) = owner.call{value: address(this).balance}("");
-        require(success, "Transferencia falhou.");
-    }
 
     //transfere o valor total do contrato para o dono do contrato quando o contrato for destruido
     function selfDestruct() external onlyWhenStopped onlyOwner {
@@ -168,8 +128,8 @@ contract Gnose {
         isStopped = false;
     }
 
-//[ID do curso] ASCII -> DEC | transforma em 16 bytes
-//[id do curso + msg sender] -> KECCAK -> HEX -> hash do curso
+    //[ID do curso] ASCII -> HEX | transforma em 32 bytes
+    //[id do curso + msg sender] -> KECCAK -> HEX -> hash do curso
 
     function purchaseCourse(bytes16 courseId) external payable onlyWhenNotStopped{
         bytes32 courseHash = keccak256(abi.encodePacked(courseId, msg.sender));

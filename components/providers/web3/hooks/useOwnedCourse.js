@@ -18,8 +18,6 @@ export const handler = (web3, contract) => (course, account) => {
     async () => {
       const courseHash = createCourseHash(web3)(course.id, account)
       const ownedCourse = await contract.methods.getCourseByHash(courseHash).call()
-
-
       
     //verifica se o usuário possui o mesmo hash de curso do contrato
     //caso dê "match", será possível pegar quais cursos o usuário possui

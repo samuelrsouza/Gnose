@@ -27,16 +27,15 @@ const Item = ({title, value, className}) => {
       <div className="bg-white border shadow overflow-hidden sm:rounded-lg mb-3">
         <div className="border-t border-gray-200 py-2">
             <Item
-                className="bg-gray-100"
                 title="ID da Compra"
                 value={course.ownedCourseId}
             />
             <Item
+              className="bg-gray-100"
                 title="Hash da Compra"
                 value={course.hash}
             />
             <Item
-                className="bg-gray-100"
                 title="Dono"
                 value={course.owned}
             />
