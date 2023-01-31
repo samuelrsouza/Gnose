@@ -4,38 +4,20 @@
 
 
 
-import { Button } from "@components/ui/common";
-import { useState } from "react";
 
-export default function CourseFilter({onSearchSubmit, onFilterSelect}) {
+export default function CourseFilter({onFilterSelect}) {
 
 
   const OPTIONS = [
-    "todos", "comprado", "ativo", "desativado"
+    "todos", "comprado", "ativo"
   ]
 
-  const [searchText, setSearchTest] = useState("")
-
   return (
-    <div className="flex flex-col md:flex-row items-center my-4">
-      {/* <div className="flex mr-2 relative rounded-md">
-        <input
-          onChange={({target: {value}}) => setSearchTest(value)}
-          value={searchText}
-          type="text"
-          name="courseHash"
-          id="courseHash"
-          className="w-52 xs:w-72 sm:w-96 focus:ring-indigo-700 shadow-md focus:border-indigo-900 block pl-7 p-4 sm:text-sm border-gray-300 rounded-md"
-          placeholder="0x2341ab..." />
-        <Button
-          onClick= { () => onSearchSubmit(searchText) }>
-          Buscar
-        </Button>
-      </div> */}
-      <div className="relative text-gray-700 justify-center align-middle">
+    <div className="flex justify-end flex-col md:flex-row items-center mr-10 my-4">
+      <div className="relative text-gray-700 normal-case justify-center align-middle">
         <select 
           onChange={({target: {value}}) => onFilterSelect(value)}
-          className="w-72 h-10 pl-3 pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" placeholder="Regular input">
+          className="w-72 h-10 pl-3 capitalize pr-6 text-base placeholder-gray-600 border rounded-lg appearance-none focus:shadow-outline" placeholder="Regular input">
           { OPTIONS.map(option => <option key={option} value={option} >{option}</option>)}
           
         </select>

@@ -20,16 +20,6 @@ export default function Marketplace({courses}) {
   const purchaseCourse = async order =>{
     const hexCourseId = web3.utils.utf8ToHex(selectedCourse.id)
 
-    const orderHash = web3.utils.soliditySha3(
-      { type: "bytes16", value: hexCourseId},
-      { type: "address", value: account.data}
-    )
-    
-    //texto email -> keccak256 
-    const emailHash = web3.utils.sha3(order.email)
-
-    // emailHash + coruseHash
-
     const value = web3.utils.toWei(String(order.price))
 
     try {
@@ -95,7 +85,6 @@ export default function Marketplace({courses}) {
                 </>
               )
             }
-
 
             return(
               <Button

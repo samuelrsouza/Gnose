@@ -1,5 +1,6 @@
 import { useEthPrice } from "@components/hooks/useEthPrice";
 import { Modal, Button } from "@components/ui/common";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const defaultOrder = {
@@ -52,16 +53,25 @@ export default function OrderModal({course, onClose, onSubmit}) {
 
   return (
     <Modal isOpen={isOpen}>
-      <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+      <div className="inline-block align-bottom justify-items-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
         <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-          <div className="sm:flex sm:items-start">
-            <div className="mt-3 sm:mt-0 sm:ml-4 sm:text-left">
-              <h3 className="mb-7 text-lg font-bold leading-6 text-gray-900" id="modal-title">
+          <div className=" text-center">
+            <div className="mt-3 sm:mt-0 mb-4 sm:text-left">
+              <div className="grid justify-items-center">
+              <Image
+                className={"object-cover rounded"}
+                src={course.coverImage}
+                width="200"
+                height="100"
+                alt={course.title}
+              />
+              </div>
+              <h3 className="mb-7 mt-4 text-lg font-semibold text-center antialiased leading-6 text-gray-900" id="modal-title">
                 {course.title}
               </h3>
               <div className="mt-1 relative rounded-md">
                 <div className="mb-1">
-                  <label className="mb-2 font-bold">Valor padrão</label>
+                  <label className="mb-2 font-bold">Preço sem inclir taxas</label>
                   <div className="text-xs text-gray-700 flex">
                     <label className="flex items-center mr-2">
                       <input
@@ -73,11 +83,8 @@ export default function OrderModal({course, onClose, onSubmit}) {
                           })
                           setEnablePrice(checked)
                         }}
-                        type="checkbox"
-                        className="form-checkbox"
                       />
                     </label>
-                    <span>O quanto vale esse conhecimento?</span>
                   </div>
                 </div>
                 <input
@@ -96,45 +103,8 @@ export default function OrderModal({course, onClose, onSubmit}) {
                   className="disabled:opacity-50 w-80 mb-1 focus:ring-indigo-500 shadow-md focus:border-indigo-900 block pl-7 p-4 sm:text-sm border-gray-300 rounded-md"
                 />
                 <p className="text-xs text-gray-700">
-                  Verifique o preço da compra posteriormente.
+                  O preço pode variar de uma compra para outra.
                 </p>
-              </div>
-              <div className="mt-2 relative rounded-md">
-                <div className="mb-1">
-                  <label className="mb-2 font-bold">Email</label>
-                </div>
-                <input
-                  onChange={({target: {value}}) => {
-                    setOrder({
-                      ...order,
-                      email: value.trim()
-                    })
-                  }}
-                  type="email"
-                  name="email"
-                  id="email"
-                  className="w-80 focus:ring-indigo-500 shadow-md focus:border-indigo-900 block pl-7 p-4 sm:text-sm border-gray-300 rounded-md"
-                  placeholder="x@y.com"
-                />
-                <p className="text-xs text-gray-700 mt-1">
-                Preencha corretamente seu email!
-                </p>
-              </div>
-              <div className="my-2 relative rounded-md">
-                <div className="mb-1">
-                  <label className="mb-2 font-bold">Reescreva o email</label>
-                </div>
-                <input
-                  onChange={({target: {value}}) => {
-                    setOrder({
-                      ...order,
-                      confirmationEmail: value.trim()
-                    })
-                  }}
-                  type="email"
-                  name="confirmationEmail"
-                  id="confirmationEmail"
-                  className="w-80 focus:ring-indigo-500 shadow-md focus:border-indigo-500 block pl-7 p-4 sm:text-sm border-gray-300 rounded-md" placeholder="x@y.com" />
               </div>
               { formState.message &&
                 <div className="p-4 my-3 text-yellow-700 bg-yellow-200 rounded-lg text-sm">
@@ -146,11 +116,11 @@ export default function OrderModal({course, onClose, onSubmit}) {
         </div>
         <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex ">
           <Button
-            disabled={formState.isDisabled}
+          variant="green"
             onClick={() => {
               onSubmit(order)
           }}>
-            Enviar
+            Confirmar
           </Button>
           <Button
             className="justify-center py-2 ml-5 "

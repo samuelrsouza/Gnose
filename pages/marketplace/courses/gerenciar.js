@@ -32,7 +32,7 @@ export default function ManagedCourses() {
     const skillToAdd = document.getElementById('skill').value 
 
     const setStudent = await contract.methods.addSkill(accountToAdd, skillToAdd).send({from:account.data})
-    debugger
+    
   }
 
   const changeState = async (courseHash, method) => {
@@ -61,14 +61,12 @@ export default function ManagedCourses() {
       >
         { course.state === "comprado" &&
         <div className="grid sm:justify-center">
-          {/* <div className="mt-2"> */}
-            <Button
-              onClick={() => activateCourse(course.hash)}
-              variant="green"
-              className="button is-primary mb-4">
-              Ativar
-            </Button>
-            
+          <Button
+            onClick={() => activateCourse(course.hash)}
+            variant="green"
+            className="button is-primary mb-4">
+            Ativar
+          </Button>
             <div className="items-start mt-3 mb-4 grid sm:justify-center relative rounded-md">
               <div className="w-full max-w-xs">
                 <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -87,7 +85,7 @@ export default function ManagedCourses() {
                   <div className="flex items-center justify-between">
                     <Button
                       onClick={addStudent}
-                      variant="green"
+                      variant="purple"
                       className="button is-primary ml-13">
                       Adicionar Habilidade
                     </Button>
@@ -122,7 +120,7 @@ export default function ManagedCourses() {
         onFilterSelect={(value) => setFilters({state: value})}
       />
       <section className="grid grid-cols-1">
-        <h1 className="text-2xl font-bold p-5">Todos os Cursos</h1>
+        <h1 className="text-2xl font-bold mr-10 p-6 ">Todos os Cursos</h1>
         { filterCourses }
         { filterCourses?.length === 0 &&
           <Message type="danger"> 

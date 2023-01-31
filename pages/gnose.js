@@ -7,10 +7,10 @@ export default function GnosePlace() {
           <section className=" text-indigo-900">
             <div className="max-w-screen-5xl px-4 py-16 sm:px-6 lg:px-3">
                 <div className="max-w-ms">
-                    <h2 className="text-3xl font-bold justify-items-center">Entenda como funciona</h2> 
+                    <h2 className="text-3xl ml-14 mt-2 font-bold justify-items-center">Entenda como funciona</h2> 
                 </div>
 
-                <div className="mt-8 grid sm:justify-items-center pt-5 grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
+                <div className="mt-6 grid sm:justify-items-center pt-5 grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
                 <div className="flex items-start p-6 rounded-lg shadow-lg bg-white max-w-sm">
                     <span className="flex-shrink-0 rounded-lg bg-indigo-500 p-4">
                     <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="check-circle" className="w-7 h-7" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

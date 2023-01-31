@@ -17,7 +17,6 @@ import { useRouter } from "next/router";
 
 export default function Portfolio({courses, course}) {
   const { account } = useAccount()
-  const { requireInstall } = useWeb3()
   const { ownedCourses } = useOwnedCourses(courses, account.data)
   const { ownedCourse } = useOwnedCourse(course, account.data)
 
@@ -34,12 +33,12 @@ export default function Portfolio({courses, course}) {
       </div>
       <section className="">
         { ownedCourses.isEmpty &&
-        <div>
+        <div className="mr-10 py-3 ml-5">
           <Message type="danger">
             <div>Não há habilidades desenvolvidas ou que serão desenvolvidas</div>
             <Link legacyBehavior href={"/marketplace"}>
               <a className="font-normal hover:underline ">
-                <i> Incremente seu portfolio no Marketplace</i>
+                <i> Incremente seu portfolio em Conteúdos</i>
               </a>
             </Link>
           </Message>

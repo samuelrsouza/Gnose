@@ -26,7 +26,7 @@ export default function OwnedCourses({courses}) {
       <div className="py-4">
         <MarketHeader />
       </div>
-      <section className="grid grid-cols-1">
+      <section className="grid grid-cols-1 mr-12 ml-12">
         { ownedCourses.isEmpty &&
         <div>
           <Message type="danger">
