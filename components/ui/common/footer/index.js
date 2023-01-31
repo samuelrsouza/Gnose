@@ -21,7 +21,7 @@ export default function Footer(){
                 </path>
                 </svg>
             </a>
-            <a href="mailto:sam8souza@gmail.com.br?subject=Assunto do email&body=Conteúdo do email que será preenchido automaticamente" className="mr-6 text-gray-600">
+            <a href="mailto: sam8souza@gmail.com.br" className="mr-6 text-gray-600">
                 <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google"
                 className="w-3.5" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
                 <path fill="currentColor"
@@ -100,10 +100,10 @@ export default function Footer(){
             </div>
             <div className="">
                 <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-                Saiba Mais
+                portfólio
                 </h6>
                 <p className="mb-4">
-                <a href="#!" className="text-gray-600">A Plataforma</a>
+                <a href="#!" className="text-gray-600">Meu portfólio</a>
                 </p>
             </div>
             <div className="">

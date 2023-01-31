@@ -87,6 +87,7 @@ export default function Marketplace({courses}) {
               return(
                 <>
                   <Button
+                    className=" text-center ml-6 justify-items-stretch"
                     disabled={true}
                     variant="green">
                     Já comprado
@@ -98,6 +99,7 @@ export default function Marketplace({courses}) {
 
             return(
               <Button
+                className=" text-center ml-6 justify-items-stretch "
                 onClick={() => setSelectedCourse(course)}
                 disabled = {!hasConnectedWallet}
                 variant="green">

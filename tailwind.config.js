@@ -10,6 +10,10 @@ module.exports = {
       maxWidth: {
         "8xl": "1920px"
       },
+      backgroundImage: {
+        'hero': "url('../badges/index.jpg')",
+      },
+      
     },
   },
   plugins: [],

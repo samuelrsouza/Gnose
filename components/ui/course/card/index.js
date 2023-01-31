@@ -4,20 +4,18 @@ import Link from "next/link"
 export default function Card({course, disabled, Footer}) {
   return (
     <div
-      className="bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl ">
-      <div className="flex h-full">
-        <div className="flex h-full next-image-wrapper">
-          <Image
-            className={`object-cover ${disabled && "filter grayscale"}`}
+      className="bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl ml-10">
+        {/* <Image
+            className={`object-cover rounded-sm ${disabled && "filter grayscale"}`}
             src={course.coverImage}
             width="250"
             height="250"
             alt={course.title}
-          />
-        </div>
-        <div className="p-8 pb-4 flex-2">
+          /> */}
+      <div className="h-full">
+        <div className="p-8 pb-4 flex-2 tracking-wider">
           <div
-            className="uppercase tracking-wide text-sm text-indigo-900 font-semibold">
+            className="text-xs text-indigo-900 uppercase font-bold tracking-wider">
             {course.type}
           </div>
           <Link href={`/courses/${course.slug}`}
@@ -25,8 +23,8 @@ export default function Card({course, disabled, Footer}) {
               {course.title}
           </Link>
           <p
-            className="mt-2 text-sm sm:text-base text-gray-500">
-            {course.description.substring(0, 70)}...
+            className="mt-2 text-sm sm:text-base text-slate-600">
+            {course.description}
           </p>
           { Footer &&
           <div className="mt-4">

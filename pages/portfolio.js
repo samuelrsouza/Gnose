@@ -28,7 +28,8 @@ export default function Portfolio({courses, course}) {
 
   return (
     <>
-      <div className="py-4 text-left text-4xl px-2 font-bold">
+    <div className="sm:justify-items-center mr-10">
+      <div className="py-4 text-center text-4xl px-2 font-bold">
         Minhas Habilidades
       </div>
       <section className="">
@@ -44,7 +45,7 @@ export default function Portfolio({courses, course}) {
           </Message>
         </div>
         }
-        <div className="grid sm:justify-center sm:grid-cols-3"> 
+        <div className="grid justify-items-center sm:grid-cols-3"> 
         { !isntLocked &&
           ownedCourses.data?.map(course =>
           <PortfolioCard
@@ -56,6 +57,7 @@ export default function Portfolio({courses, course}) {
           )}
         </div>
       </section>
+      </div>
     </>
   )
 }

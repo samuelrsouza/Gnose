@@ -19,7 +19,7 @@ export default function Message({children, type = "success"}) {
   const messageType = TYPES[type]
 
   return (
-    <div className={`bg-${messageType}-100 rounded-xl mb-3`}>
+    <div className={`bg-${messageType}-100 w-37 rounded-xl mb-3`}>
       <div className="max-w-7xl mx-auto py-3 px-3 sm:px-3 lg:px-3">
         <div className="flex items-center justify-between flex-wrap">
           <div className="w-0 flex-1 flex items-center">

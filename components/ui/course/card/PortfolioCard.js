@@ -6,7 +6,7 @@ import Image from "next/image"
 
   
     return (
-      <div className="max-w-xs py-4 px-12 bg-white shadow-lg flex-col align-middle justify-center rounded-lg my-10">
+      <div className="max-w-xs py-4 px-12 bg-white shadow-lg flex-col align-middle sm:justify-items-center rounded-lg my-10">
           <div>
             {/* <h2 className="text-gray-800 text-lg font-semibold">
               Habilidade:

@@ -44,7 +44,6 @@ export default function Course({course}) {
         courseState = {courseState}
       />
       <Modal />
-      
       <div className="container mx-auto px-6">
         <div className="mt-5 flex flex-col items-center">
           <div className="py-2"></div>
@@ -62,6 +61,7 @@ export default function Course({course}) {
     </>
   )
 }
+
 
 export function getStaticPaths() {
   const { data } = getAllCourses()

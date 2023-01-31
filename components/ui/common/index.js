@@ -1,3 +1,4 @@
+import { fromJSON } from "postcss"
 
 
 export { default as Footer } from "./footer"
@@ -10,3 +11,4 @@ export { default as ActiveLink } from "./link"
 export { default as Message } from "./message"
 export { default as Loader } from "./loader"
 export { default as Checkbox } from "./checkbox"
+export { default as WalletCard } from "./walletCard"

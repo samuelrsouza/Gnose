@@ -17,16 +17,13 @@ export default function WalletBar() {
   const {account, network} = useWalletInfo()
   
   return (
-    <section className="text-white bg-indigo-900 rounded-lg">
-      <div className="p-8 py-5">
-        <h1 className="text-2xl">Olá, {account.data} </h1>
-        <h2 className="subtitle mb-5 xs:text-xl">Comece sua jornada agora!</h2>
-        <div className="flex justify-between items-center">
-          <div className="sm:flex sm:justify-center lg:justify-start">
-          </div>
+    <section className="text-black flex flex-wrap justify-center space-x-2">
+      <div className="p-8 py-5 px-4">
+        <h1 className="text-2xl px-5 py-5 rounded-full border border-gray-300 text-gray-500 font-semibold flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease">Conta Conectada: {account.data} </h1>
+        <div className="grid justify-items-stretch">
           <div>
           { network.hasInitialResponse && !network.isSupported &&
-                <div className="bg-red-400 p-5 rounded-lg">
+                <div className="bg-red-400 text-lg text-center p-5 mt-10 rounded-lg">
                   <div>
                     É necessário utilizar a rede {` `}
                     <strong className="text-2xl">
@@ -41,7 +38,7 @@ export default function WalletBar() {
                 </ div>  
               }
               { network.data &&
-                <div className="py-3">
+                <div className="py-3 text-center">
                   <span>Atualmente na rede </span>
                   <strong className="text-2xl">{network.data}</strong>
                 </div>

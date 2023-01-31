@@ -12,14 +12,15 @@ export default function Home({courses}) {
 
     
     <>
+    <div className="bg-hero bg-no-repeat bg-cover bg-center bg-fixed">
       <Hero />
-      <GnosePlace>
-      </GnosePlace>
+      <GnosePlace/>
         {/* <CourseList
           courses={courses}
         >
           {course => <CourseCard key={course.id} course={course}/>}
         </CourseList>  */}
+      </div>
     </>
   )
 }

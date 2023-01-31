@@ -2,29 +2,16 @@ import { useEthPrice, COURSE_PRICE } from "@components/hooks/useEthPrice"
 import Image from "next/image"
 
 export default function EthRates() {
-  const { eth } = useEthPrice()
 
   return (
-    <div className="grid grid-cols-4">
-      <div className="flex flex-2 items-stretch text-center">
-        <div className="p-5 sm:justify-center border drop-shadow rounded-md">
-          <div className="flex">
-            { eth.data ?
-              <>
-                {/* <span className="text-2xl font-bold">
-                  {eth.perItem}
-                </span> */}
-                <span className="sm:justify-center ml-7 text-center text-2xl font-bold">
-                  2$ + taxas =~7$
-                </span>
-              </> :
-              <div className="w-full flex justify-center">
-              </div>
-            }
+        <div>
+          <div className="justify-items-stretch mt-5 flex ml-11 items-center  bg-blue-100 w-96 h-10 text-lg rounded-lg py-5 px-6 mb-3 text-indigo-700" role="alert">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" className="w-4 h-4 mr-2 fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path fill="currentColor" d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path>
+            </svg>
+              Preço por módulo: 
+            <span className="font-bold"> &nbsp; 2$ + TAXAS ≈ 7$ </span>
           </div>
-          <p className="text-xl text-gray-500">Preço por módulo</p>
         </div>
-      </div>
-    </div>
   )
 }
