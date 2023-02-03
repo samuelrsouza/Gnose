@@ -45,7 +45,7 @@ export default function Portfolio({courses, course}) {
         </div>
         }
         <div className="grid justify-items-center sm:grid-cols-3"> 
-        { !isntLocked &&
+        {
           ownedCourses.data?.map(course =>
           <PortfolioCard
             locked = {isntLocked}
