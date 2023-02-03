@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity >=0.4.22 <0.9.0;
+pragma solidity >=0.4.22 < 0.9.0;
 
 
 //dois estados dos cursos/aulas
@@ -116,9 +116,6 @@ contract Gnose {
   }
 
     //transfere o valor total do contrato para o dono do contrato quando o contrato for destruido
-    function selfDestruct() external onlyWhenStopped onlyOwner {
-        selfdestruct(owner);
-    }
 
     function stopContract() external onlyOwner {
         isStopped = true;

@@ -42,9 +42,6 @@ export default function Hero({title,description,image, skill, hasOwner, link}){
                           {skill}
                         </a>
                       </div>
-                    {/* <p className="mt-4 text-xl font-medium text-black-600 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                      Habilidade que será desenvolvida: {skill}
-                    </p> */}
                       {hasOwner &&
                         <div className="mt-5 sm:mt-8 sm:justify-center lg:justify-start">
                           <div className="text-lg inline-block mb-5 p-4 py-3 green rounded-full font-bold bg-green-300 text-green-700">

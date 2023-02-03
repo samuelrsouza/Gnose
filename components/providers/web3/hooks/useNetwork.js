@@ -8,6 +8,7 @@ import useSWR from "swr"
 
 const NETWORKS = {
     1: "Ethereum",
+    3: "Goerli",
     1337: "Ganache"
 }
 

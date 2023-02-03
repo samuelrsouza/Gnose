@@ -9,7 +9,7 @@ async function tryCatch(promise, message) {
     }
     catch (error) {
         assert(error, "Era esperado um erro porém não houve nenhum");
-        assert(error.message.startsWith(PREFIX + message), "Era esperado um erro começando com '" + PREFIX + message + "' mas teve '" + error.message + "' ao invés");
+        assert(error.message.startsWith(PREFIX + message), "Era esperado um erro começando com '" + PREFIX + message + "' mas obteve '" + error.message + "' ao invés");
     }
 };
 

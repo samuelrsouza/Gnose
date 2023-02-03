@@ -47,25 +47,25 @@ export default function Keypoints({points}){
           <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-3 mb-6 md:gap-x-2 md:gap-y-2">
             { points.map((point, i) =>
               <div key={point} className="relative">
-                <dt>
-                <div class="p-8 border border-gray-200 rounded bg-white w-64 hover:bg-gray-50 hover:border-b-4 hover:border-b-blue-500 active:bg-gray-100">
-                  <div class="grid justify-items-center text-gray-500">
+                <dl>
+                <div className="p-8 border border-gray-200 rounded bg-white w-64 hover:bg-gray-50 hover:border-b-4 hover:border-b-blue-500 active:bg-gray-100">
+                  <div className="grid justify-items-center text-gray-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      class="h-10 w-10"
+                      className="h-10 w-10"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                       />
                     </svg>
                   </div>
-                  <div class="text-center mt-4">
+                  <div className="text-center mt-4">
                       <p className="text-lg leading-6 font-bold text-gray-900">
                         Tópico {i+1}
                       </p>
@@ -74,7 +74,7 @@ export default function Keypoints({points}){
                     </dd>
                   </div>
                   </div>
-                </dt>
+                </dl>
               </div>
               )
             }
