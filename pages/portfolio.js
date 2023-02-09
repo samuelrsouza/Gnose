@@ -46,10 +46,11 @@ export default function Portfolio({courses, course}) {
         }
         <div className="grid justify-items-center sm:grid-cols-3"> 
         {
-          ownedCourses.data?.map(course =>
+          ownedCourses.data?.map((course,i) =>
           <PortfolioCard
             locked = {isntLocked}
             course={course}
+            key={i}
             badge={course.badge}
             >
           </PortfolioCard>
