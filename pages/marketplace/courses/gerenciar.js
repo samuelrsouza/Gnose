@@ -48,7 +48,7 @@ export default function ManagedCourses() {
   }
 
   const addFund = async () => {
-    const deposit = await contract.methods.addFunds().send({value: web3.utils.toWei("0.0044217479618327", "ether"),from: account.data});
+    const deposit = await contract.methods.addFunds().send({value: web3.utils.toWei("0.0037087523301700203", "ether"),from: account.data});
     console.log(deposit) 
   }
 
