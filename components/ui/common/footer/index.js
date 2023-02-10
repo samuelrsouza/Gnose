@@ -86,16 +86,16 @@ export default function Footer(){
                 Cursos
                 </h6>
                 <p className="mb-4">
-                <a href="courses/programação-em-python-do-básico-ao-avançado" className="text-gray-600">Programação Python</a>
+                <a href="/courses/programação-em-python-do-básico-ao-avançado" className="text-gray-600">Programação Python</a>
                 </p>
                 <p className="mb-4">
-                <a href="courses/java-para-iniciantes-e-estudantes" className="text-gray-600">Programação Java</a>
+                <a href="/courses/java-para-iniciantes-e-estudantes" className="text-gray-600">Programação Java</a>
                 </p>
                 <p className="mb-4">
-                <a href="courses/aprenda-o-basico-do-frances" className="text-gray-600">Idiomas</a>
+                <a href="/courses/aprenda-o-basico-do-frances" className="text-gray-600">Idiomas</a>
                 </p>
                 <p>
-                <a href="courses/java-para-iniciantes-e-estudantes" className="text-gray-600">Desenvolvimento Pessoal</a>
+                <a href="/courses/java-para-iniciantes-e-estudantes" className="text-gray-600">Desenvolvimento Pessoal</a>
                 </p>
             </div>
             <div className="">
