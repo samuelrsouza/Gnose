@@ -32,18 +32,23 @@
       "slug": "aprenda-o-basico-do-frances",
       "wsl": [
         "Você aprenderá rapidamente o básico da língua francesa",
-        "Você aprenderá a reagir a situações comuns do dia-a-dia e a situações de emergência",
-        "Será privilegiado a prática do que a teoria",
-        "Você aprenderá a ler corretamente, isso te ajudará a se tornar independente no idioma"
+        "Você aprenderá a reagir a situações comuns do dia-a-dia",
+        "Aprenda a gramática e escrever orações completas"
       ],
       "createdAt": "",
       "lec":[
         "Introdução",
         "Como ler e pronunciar",
         "Situações e conversas",
-        "Vocabuçário",
+        "Vocabulário",
         "Gramática"
-      ]
+      ],
+      "video":[
+        "https://www.youtube.com/embed/sE48SEfH_pA",
+        "https://www.youtube.com/embed/tiIkLXTvLQM",
+        "https://www.youtube.com/embed/wzqpKBDtdgw"
+        ]
+
     },
     {
       "id": "3",
@@ -57,7 +62,7 @@
       "wsl": [
         "Aprenda do ZERO como desenvolver Programas com Java",
         "Aprenda como Desenvolver Telas Para Softwares com JavaFX",
-        "100% Prático"
+        "Aprenda a teoria por trás da prática"
       ],
       "lec":[
         "Instalando e Configurando Softwares Necessários",

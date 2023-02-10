@@ -4,6 +4,9 @@ module.exports = {
   content: [],
   theme: {
     extend: {
+      aspectRatio: {
+        '4/5': '4 / 3',
+      },
       flex: {"2": "2 2 0%"},
       opacity: ["disabled"],
       cursor: ["disabled"],
@@ -13,7 +16,7 @@ module.exports = {
       backgroundImage: {
         'hero': "url('../badges/index.jpg')",
       },
-      
+      variants: {},
     },
   },
   plugins: [],

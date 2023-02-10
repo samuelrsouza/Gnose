@@ -37,12 +37,17 @@ export default function Course({course}) {
       </div>
       <Keypoints 
         points = {course.wsl}/>
-      <Curriculum
-        item ={ course.lec}
-        isLoading = {isLoading}
-        locked = {isLocked}
-        courseState = {courseState}
+
+      {
+       <Curriculum
+          item ={course.lec}
+          isLoading = {isLoading}
+          locked = {isLocked}
+          courseState = {courseState}
+          video = {course.video1}
       />
+      }
+
       <Modal />
       <div className="container mx-auto px-6">
         <div className="mt-5 flex flex-col items-center">
