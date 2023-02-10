@@ -1,5 +1,5 @@
 const  HDWalletProvider = require("@truffle/hdwallet-provider")
-const keys =  require("./keys.json")
+// const keys =  require("./keys.json")
 
 module.exports = {
   contracts_build_directory: "./public/contracts", 
@@ -23,7 +23,7 @@ module.exports = {
     // Useful for deploying to a public network.
     // Note: It's important to wrap the provider as a function to ensure truffle uses a new provider every time.
     goerli: {
-      provider: () => new HDWalletProvider(keys.PRIVATE_KEY, keys.INFURA_GOERLI_URL),
+      provider: () => new HDWalletProvider("say episode solar bitter then aerobic problem brother obtain hamster guilt lizard", "https://goerli.infura.io/v3/55db859be1834c8d8fe30b23f082df71"),
       network_id: 5,       // Ropsten's id
       gas: 5500000,
       gasPrice: 20000000000,        // Ropsten has a lower block limit than mainnet
