@@ -18,13 +18,9 @@ import Link from "next/link"
 export default function Hero({title,description,image, skill, hasOwner, link}){
     return (
         <section>
-          <div className="relative bg-white overflow-hidden">
+          <div className="bg-white">
             <div className="max-w-7xl mx-auto">
               <div className="relative z-10 pb-8 bg-white px-6 w-full flex flex-wrap items-center justify-between">
-                <svg className="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                  <polygon points="50,0 100,0 50,100 0,100" />
-                </svg>
-
                 <main className="mt-10 mb-4 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
                   <div className="rounded-2xl bg-gradient-to-r from-green-300 via-indigo-900 to-purple-500 p-1 shadow-xl">
                     <div className="block rounded-xl bg-white p-6 sm:p-8">
